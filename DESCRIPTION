@@ -1,0 +1,38 @@
+Package: deepagentsr
+Title: Deep-Agents-Style Agent Harness for R
+Version: 0.0.1
+Authors@R: 
+    person("Hadi", "Master", , "hadi@example.com", role = c("aut", "cre"))
+Description: Provides an R-native agent harness inspired by Deep Agents,
+    with model adapters, tool metadata, virtual filesystems, planning tools,
+    subagents, skills, memory, human approval, permissions, and event traces.
+License: MIT + file LICENSE
+URL: https://example.com/deepagentsr
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+Depends:
+    R (>= 4.1)
+Imports:
+    R6,
+    jsonlite,
+    yaml,
+    fs,
+    utils
+Suggests:
+    ellmer,
+    coro,
+    mcptools,
+    ragnar,
+    aisdk,
+    callr,
+    processx,
+    curl,
+    promises,
+    testthat (>= 3.0.0),
+    knitr,
+    rmarkdown,
+    devtools,
+    roxygen2
+Config/testthat/edition: 3
+VignetteBuilder: knitr

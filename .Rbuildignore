@@ -1,0 +1,12 @@
+^\.github$
+^r_deepagents_package_plan\.md$
+^\.Rproj\.user$
+^\.env$
+^deepagentsr\.Rproj$
+^rdeepagent\.Rproj$
+^README\.Rmd$
+^_pkgdown\.yml$
+^scripts$
+^docs$
+^doc$
+^Meta$

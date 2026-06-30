@@ -1,0 +1,11 @@
+test_that("local dev shell tool is opt-in and allowlisted", {
+  skip_if_not_installed("processx")
+  rscript <- file.path(R.home("bin"), "Rscript")
+  probe <- try(processx::run(rscript, c("-e", "cat('probe')"), timeout = 10), silent = TRUE)
+  skip_if(inherits(probe, "try-error"), "processx cannot spawn Rscript in this environment")
+  tool <- local_dev_shell_tool(tempdir(), allowed_commands = rscript)
+  out <- tool$fun(rscript, c("-e", "cat('ok')"), timeout = 10)
+  expect_equal(out$status, 0)
+  expect_equal(out$stdout, "ok")
+  expect_error(tool$fun("not-allowed"), "not allowed")
+})

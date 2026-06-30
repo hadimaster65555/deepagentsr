@@ -1,0 +1,45 @@
+url: https://example.com/deepagentsr
+template:
+  bootstrap: 5
+reference:
+- title: Agent runtime
+  contents:
+  - create_deep_agent
+  - context_budget
+  - as_chat_factory
+  - deep_tool
+  - as_ellmer_tool
+  - subagent
+- title: Backends and safety
+  contents:
+  - memory_backend
+  - filesystem_backend
+  - composite_backend
+  - rds_store_backend
+  - rds_checkpointer
+  - fs_permission
+  - interrupt_config
+  - decision_approve
+  - decision_edit
+  - decision_reject
+  - decision_respond
+  - local_dev_shell_tool
+- title: Extensions
+  contents:
+  - aisdk_tool
+  - aisdk_subagent
+  - discover_skills
+  - mcp_tools
+  - rag_tool
+  - rag_tools
+  - as_shinychat_stream
+- title: Events
+  contents:
+  - export_events_jsonl
+  - read_events_jsonl
+  - print.deepagent_event_stream
+- title: Testing helpers
+  contents:
+  - fake_chat
+  - assistant_message
+  - assistant_tool_call
