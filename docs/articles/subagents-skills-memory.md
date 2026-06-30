@@ -15,7 +15,7 @@ related mechanisms:
 ## Subagents
 
 Subagents are configured with
-[`subagent()`](https://hadimaster65555.github.io/rdeepagent/reference/subagent.md)
+[`subagent()`](https://hadimaster65555.github.io/deepagentsr/reference/subagent.md)
 and called through the supervisor’s built-in `task` tool. Each subagent
 receives an isolated agent runtime with its own system prompt, tool
 list, and model.
@@ -128,7 +128,7 @@ controlled.
 
 ## aisdk interop
 
-[`aisdk_tool()`](https://hadimaster65555.github.io/rdeepagent/reference/aisdk_tool.md)
+[`aisdk_tool()`](https://hadimaster65555.github.io/deepagentsr/reference/aisdk_tool.md)
 wraps an [aisdk](https://github.com/YuLab-SMU/aisdk)-style Agent as a
 tool. The wrapper only requires an object with a `$run()` method, so it
 is easy to test without making
@@ -155,7 +155,7 @@ worker_tool$fun("summarise", list(topic = "documentation"))
 #> [1] "ran summarise documentation"
 ```
 
-[`aisdk_subagent()`](https://hadimaster65555.github.io/rdeepagent/reference/aisdk_subagent.md)
+[`aisdk_subagent()`](https://hadimaster65555.github.io/deepagentsr/reference/aisdk_subagent.md)
 exposes the same style of object as a direct subagent. This is useful
 when you already use [aisdk](https://github.com/YuLab-SMU/aisdk) for
 specialized agents and want the `deepagentsr` supervisor to delegate to

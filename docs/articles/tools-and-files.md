@@ -12,7 +12,7 @@ transcripts.
 
 ## Custom R tools
 
-[`deep_tool()`](https://hadimaster65555.github.io/rdeepagent/reference/deep_tool.md)
+[`deep_tool()`](https://hadimaster65555.github.io/deepagentsr/reference/deep_tool.md)
 stores the R function, model-facing metadata, side-effect metadata,
 interrupt policy, and argument schema. Argument schemas can be explicit,
 but the package also infers safe generic schemas from function formals.
@@ -92,7 +92,7 @@ mem$glob("*.md", "/docs")
 
 ## Filesystem and durable backends
 
-[`filesystem_backend()`](https://hadimaster65555.github.io/rdeepagent/reference/filesystem_backend.md)
+[`filesystem_backend()`](https://hadimaster65555.github.io/deepagentsr/reference/filesystem_backend.md)
 maps virtual paths into one configured host directory. It blocks path
 traversal and common secret-like paths by default.
 
@@ -107,7 +107,7 @@ fs_backend$read("/reports/out.txt")
 ```
 
 Use
-[`rds_store_backend()`](https://hadimaster65555.github.io/rdeepagent/reference/rds_store_backend.md)
+[`rds_store_backend()`](https://hadimaster65555.github.io/deepagentsr/reference/rds_store_backend.md)
 when you want a small durable virtual filesystem without exposing a host
 directory tree to the agent.
 
@@ -122,7 +122,7 @@ reopened$read("/memory/fact.txt")
 #> [1] "R has first-class functions."
 ```
 
-[`composite_backend()`](https://hadimaster65555.github.io/rdeepagent/reference/composite_backend.md)
+[`composite_backend()`](https://hadimaster65555.github.io/deepagentsr/reference/composite_backend.md)
 can route path prefixes to different backends. This is useful when some
 paths should be durable and others should remain temporary.
 
@@ -174,8 +174,8 @@ offload_run$text
 #> [1] "The result was offloaded."
 offload_backend$list("/internal/offloads", recursive = TRUE)
 #>                                                                     path type
-#> 1 /internal/offloads/2026-06-30/offload-20260630232326.147-acgf0lko.json file
-#> 2  /internal/offloads/2026-06-30/offload-20260630232326.147-acgf0lko.txt file
+#> 1 /internal/offloads/2026-06-30/offload-20260630232653.571-acgf0lko.json file
+#> 2  /internal/offloads/2026-06-30/offload-20260630232653.571-acgf0lko.txt file
 #>   size
 #> 1  255
 #> 2  779
@@ -209,14 +209,14 @@ vapply(summary_run$state$turns, function(turn) turn$role, character(1))
 #> [1] "summary"   "tool"      "assistant"
 summary_backend$list("/internal/transcripts", recursive = TRUE)
 #>                                                                                              path
-#> 1 /internal/transcripts/thread-20260630232326.192-cphlbgrz/summary-20260630232326.194-lwtdsuvu.md
+#> 1 /internal/transcripts/thread-20260630232653.616-cphlbgrz/summary-20260630232653.618-lwtdsuvu.md
 #>   type size
 #> 1 file  581
 ```
 
 ## Checkpoints and event traces
 
-[`rds_checkpointer()`](https://hadimaster65555.github.io/rdeepagent/reference/rds_checkpointer.md)
+[`rds_checkpointer()`](https://hadimaster65555.github.io/deepagentsr/reference/rds_checkpointer.md)
 persists thread state after completed runs and interrupts.
 
 ``` r
@@ -231,7 +231,7 @@ checkpoint_agent <- create_deep_agent(
 
 checkpoint_run <- checkpoint_agent$invoke("hello")
 checkpointer$list_threads()
-#> [1] "thread-20260630232326.244-q6rw5wkz"
+#> [1] "thread-20260630232653.669-q6rw5wkz"
 
 restored <- create_deep_agent(
   model = fake_chat(list(assistant_message("unused"))),

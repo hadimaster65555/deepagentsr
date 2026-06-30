@@ -40,4 +40,4 @@ aisdk_tool(
 ## Value
 
 A
-[`deep_tool()`](https://hadimaster65555.github.io/rdeepagent/reference/deep_tool.md).
+[`deep_tool()`](https://hadimaster65555.github.io/deepagentsr/reference/deep_tool.md).

@@ -26,7 +26,7 @@
   </ul></li>
       </ul><ul class="navbar-nav"><li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="search.json"></form></li>
-<li class="nav-item"><a class="external-link nav-link" href="https://github.com/hadimaster65555/rdeepagent/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/hadimaster65555/deepagentsr/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul></div>
 
 
@@ -36,15 +36,15 @@
   <main id="main" class="col-md-9"><div class="page-header">
 
       <h1>Plan to Build an R Package Similar to Deep Agents</h1>
-      <small class="dont-index">Source: <a href="https://github.com/hadimaster65555/rdeepagent/blob/HEAD/r_deepagents_package_plan.md" class="external-link"><code>r_deepagents_package_plan.md</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/hadimaster65555/deepagentsr/blob/HEAD/r_deepagents_package_plan.md" class="external-link"><code>r_deepagents_package_plan.md</code></a></small>
     </div>
 
 <div id="plan-to-build-an-r-package-similar-to-deep-agents" class="section level1">
 
-<p>Date: 2026-06-30 Working package name: <a href="https://github.com/hadimaster65555/rdeepagent" class="external-link">deepagentsr</a></p>
+<p>Date: 2026-06-30 Working package name: <a href="https://github.com/hadimaster65555/deepagentsr" class="external-link">deepagentsr</a></p>
 <div class="section level2">
 <h2 id="id_1-executive-summary">1. Executive summary<a class="anchor" aria-label="anchor" href="#id_1-executive-summary"></a></h2>
-<p>Build <a href="https://github.com/hadimaster65555/rdeepagent" class="external-link">deepagentsr</a>, an R-native, batteries-included agent harness inspired by LangChain’s Deep Agents. The package should expose a simple entry point, <code><a href="reference/create_deep_agent.html">create_deep_agent()</a></code>, that returns a stateful R6 object capable of planning, calling R tools, managing a virtual filesystem, spawning subagents, loading skills and memory, pausing for human approval, and streaming execution events.</p>
+<p>Build <a href="https://github.com/hadimaster65555/deepagentsr" class="external-link">deepagentsr</a>, an R-native, batteries-included agent harness inspired by LangChain’s Deep Agents. The package should expose a simple entry point, <code><a href="reference/create_deep_agent.html">create_deep_agent()</a></code>, that returns a stateful R6 object capable of planning, calling R tools, managing a virtual filesystem, spawning subagents, loading skills and memory, pausing for human approval, and streaming execution events.</p>
 <p>The recommended core R dependency is <a href="https://ellmer.tidyverse.org" class="external-link">ellmer</a>. It is the best foundation because it already provides multi-provider chat clients, stateful chat objects, tool/function calling, streaming, async calls, structured data extraction, and provider-specific support. The package should use <a href="https://ellmer.tidyverse.org" class="external-link">ellmer</a> as the LLM and tool-calling substrate while implementing the Deep-Agents-style harness itself.</p>
 <p><a href="https://github.com/YuLab-SMU/aisdk" class="external-link">aisdk</a> is also highly relevant. It already has agentic features in R, including Agents, Tasks, Flows, multi-agent teams, automatic function-to-tool schema generation, stateful chat sessions, telemetry, hooks, MCP support, memory, and skills. Treat <a href="https://github.com/YuLab-SMU/aisdk" class="external-link">aisdk</a> as an accelerator, reference design, and optional interop target, not the initial hard dependency, unless the goal is to build a thin DeepAgents-flavored wrapper around an existing R agent runtime.</p>
 <p>Recommended dependency posture:</p>
@@ -118,8 +118,8 @@
 <p><a href="https://github.com/YuLab-SMU/aisdk" class="external-link">aisdk</a> is worth studying closely because it already overlaps with many DeepAgents concepts: multi-agent orchestration, tool systems, stateful chat sessions, hooks, MCP support, memory, and skills. It may also provide reusable ideas for agent/session boundaries.</p>
 <p>Use it in one of three ways:</p>
 <ol style="list-style-type: decimal"><li>Reference only: borrow design patterns, especially the split between stateless agents and stateful sessions.</li>
-<li>Optional interop: allow an <a href="https://github.com/YuLab-SMU/aisdk" class="external-link">aisdk</a> Agent to be wrapped as a <a href="https://github.com/hadimaster65555/rdeepagent" class="external-link">deepagentsr</a> subagent or tool.</li>
-<li>Alternative backend: if speed matters more than owning the agent runtime, build <a href="https://github.com/hadimaster65555/rdeepagent" class="external-link">deepagentsr</a> as a narrower API layer over <a href="https://github.com/YuLab-SMU/aisdk" class="external-link">aisdk</a>.</li>
+<li>Optional interop: allow an <a href="https://github.com/YuLab-SMU/aisdk" class="external-link">aisdk</a> Agent to be wrapped as a <a href="https://github.com/hadimaster65555/deepagentsr" class="external-link">deepagentsr</a> subagent or tool.</li>
+<li>Alternative backend: if speed matters more than owning the agent runtime, build <a href="https://github.com/hadimaster65555/deepagentsr" class="external-link">deepagentsr</a> as a narrower API layer over <a href="https://github.com/YuLab-SMU/aisdk" class="external-link">aisdk</a>.</li>
 </ol><p>Recommendation: begin with reference plus optional interop. Avoid a hard dependency at first because <a href="https://github.com/YuLab-SMU/aisdk" class="external-link">aisdk</a> already owns many high-level agent concepts, which could blur the identity of the new package.</p>
 </div>
 <div class="section level3">
@@ -626,7 +626,7 @@ Use read_file() or grep() to inspect the full result.</code></pre>
 <div class="section level3">
 <h3 id="id_71-quickstart-example">7.1 Quickstart example<a class="anchor" aria-label="anchor" href="#id_71-quickstart-example"></a></h3>
 <div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/hadimaster65555/rdeepagent" class="external-link">deepagentsr</a></span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/hadimaster65555/deepagentsr" class="external-link">deepagentsr</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ellmer.tidyverse.org" class="external-link">ellmer</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">internet_search</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/deep_tool.html">deep_tool</a></span><span class="op">(</span></span>
@@ -1028,7 +1028,7 @@ Use read_file() or grep() to inspect the full result.</code></pre>
 <div class="section level3">
 <h3 id="readme">README<a class="anchor" aria-label="anchor" href="#readme"></a></h3>
 <p>Include:</p>
-<ul><li>What <a href="https://github.com/hadimaster65555/rdeepagent" class="external-link">deepagentsr</a> is.</li>
+<ul><li>What <a href="https://github.com/hadimaster65555/deepagentsr" class="external-link">deepagentsr</a> is.</li>
 <li>Why it exists: DeepAgents-style workflow for R.</li>
 <li>Minimal quickstart.</li>
 <li>Safety note.</li>
@@ -1079,11 +1079,11 @@ Use read_file() or grep() to inspect the full result.</code></pre>
 <h2 id="id_14-key-design-decisions">14. Key design decisions<a class="anchor" aria-label="anchor" href="#id_14-key-design-decisions"></a></h2>
 <div class="section level3">
 <h3 id="decision-1-use-ellmer-as-the-core-dependency">Decision 1: Use <code>{ellmer}</code> as the core dependency<a class="anchor" aria-label="anchor" href="#decision-1-use-ellmer-as-the-core-dependency"></a></h3>
-<p>Rationale: <a href="https://ellmer.tidyverse.org" class="external-link">ellmer</a> is provider-agnostic and handles the model/tool plumbing. This lets <a href="https://github.com/hadimaster65555/rdeepagent" class="external-link">deepagentsr</a> focus on the harness: planning, VFS, subagents, memory, skills, permissions, and context management.</p>
+<p>Rationale: <a href="https://ellmer.tidyverse.org" class="external-link">ellmer</a> is provider-agnostic and handles the model/tool plumbing. This lets <a href="https://github.com/hadimaster65555/deepagentsr" class="external-link">deepagentsr</a> focus on the harness: planning, VFS, subagents, memory, skills, permissions, and context management.</p>
 </div>
 <div class="section level3">
 <h3 id="decision-2-treat-aisdk-as-a-reference-and-optional-interop-layer">Decision 2: Treat <code>{aisdk}</code> as a reference and optional interop layer<a class="anchor" aria-label="anchor" href="#decision-2-treat-aisdk-as-a-reference-and-optional-interop-layer"></a></h3>
-<p>Rationale: <a href="https://github.com/YuLab-SMU/aisdk" class="external-link">aisdk</a> has relevant agent features, but a hard dependency could make <a href="https://github.com/hadimaster65555/rdeepagent" class="external-link">deepagentsr</a> a thin wrapper. Optional interop lets advanced users compose <a href="https://github.com/YuLab-SMU/aisdk" class="external-link">aisdk</a> Agents into <a href="https://github.com/hadimaster65555/rdeepagent" class="external-link">deepagentsr</a> without forcing that architecture on the core.</p>
+<p>Rationale: <a href="https://github.com/YuLab-SMU/aisdk" class="external-link">aisdk</a> has relevant agent features, but a hard dependency could make <a href="https://github.com/hadimaster65555/deepagentsr" class="external-link">deepagentsr</a> a thin wrapper. Optional interop lets advanced users compose <a href="https://github.com/YuLab-SMU/aisdk" class="external-link">aisdk</a> Agents into <a href="https://github.com/hadimaster65555/deepagentsr" class="external-link">deepagentsr</a> without forcing that architecture on the core.</p>
 </div>
 <div class="section level3">
 <h3 id="decision-3-implement-a-virtual-filesystem-before-shell-execution">Decision 3: Implement a virtual filesystem before shell execution<a class="anchor" aria-label="anchor" href="#decision-3-implement-a-virtual-filesystem-before-shell-execution"></a></h3>
@@ -1132,7 +1132,7 @@ Use read_file() or grep() to inspect the full result.</code></pre>
 </tr><tr><td>
 <a href="https://github.com/YuLab-SMU/aisdk" class="external-link">aisdk</a> overlap creates confusion</td>
 <td>Users may ask why both exist</td>
-<td>Clear positioning: <a href="https://github.com/hadimaster65555/rdeepagent" class="external-link">deepagentsr</a> is a DeepAgents-style harness; <a href="https://github.com/YuLab-SMU/aisdk" class="external-link">aisdk</a> is optional/reference</td>
+<td>Clear positioning: <a href="https://github.com/hadimaster65555/deepagentsr" class="external-link">deepagentsr</a> is a DeepAgents-style harness; <a href="https://github.com/YuLab-SMU/aisdk" class="external-link">aisdk</a> is optional/reference</td>
 </tr></tbody></table></div>
 <div class="section level2">
 <h2 id="id_16-first-build-checklist">16. First build checklist<a class="anchor" aria-label="anchor" href="#id_16-first-build-checklist"></a></h2>

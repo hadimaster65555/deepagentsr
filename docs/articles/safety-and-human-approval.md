@@ -68,13 +68,13 @@ sent$value
 ```
 
 Use
-[`decision_approve()`](https://hadimaster65555.github.io/rdeepagent/reference/decision_approve.md)
+[`decision_approve()`](https://hadimaster65555.github.io/deepagentsr/reference/decision_approve.md)
 to run the original arguments,
-[`decision_edit()`](https://hadimaster65555.github.io/rdeepagent/reference/decision_edit.md)
+[`decision_edit()`](https://hadimaster65555.github.io/deepagentsr/reference/decision_edit.md)
 to replace arguments,
-[`decision_reject()`](https://hadimaster65555.github.io/rdeepagent/reference/decision_reject.md)
+[`decision_reject()`](https://hadimaster65555.github.io/deepagentsr/reference/decision_reject.md)
 to tell the model the call was rejected, or
-[`decision_respond()`](https://hadimaster65555.github.io/rdeepagent/reference/decision_respond.md)
+[`decision_respond()`](https://hadimaster65555.github.io/deepagentsr/reference/decision_respond.md)
 to provide a human answer without running the tool.
 
 ``` r
@@ -94,7 +94,7 @@ reject_agent$resume(rejected$thread_id, decision_reject("Do not send email."))$t
 
 ## Filesystem permissions
 
-[`fs_permission()`](https://hadimaster65555.github.io/rdeepagent/reference/fs_permission.md)
+[`fs_permission()`](https://hadimaster65555.github.io/deepagentsr/reference/fs_permission.md)
 rules apply to built-in file tools. A rule can allow, deny, or interrupt
 operations on matching virtual paths.
 
@@ -145,7 +145,7 @@ inherits(blocked, "try-error")
 
 ## Filesystem backend safety
 
-[`filesystem_backend()`](https://hadimaster65555.github.io/rdeepagent/reference/filesystem_backend.md)
+[`filesystem_backend()`](https://hadimaster65555.github.io/deepagentsr/reference/filesystem_backend.md)
 maps all virtual paths under one configured host directory. It blocks
 path traversal and, by default, common secret-like paths such as
 `/.env`.
@@ -166,7 +166,7 @@ inherits(secret_write, "try-error")
 ## Local shell tool
 
 Shell execution is not part of the default runtime.
-[`local_dev_shell_tool()`](https://hadimaster65555.github.io/rdeepagent/reference/local_dev_shell_tool.md)
+[`local_dev_shell_tool()`](https://hadimaster65555.github.io/deepagentsr/reference/local_dev_shell_tool.md)
 is an opt-in local development convenience, not a security sandbox.
 Register it only for trusted tasks and restrict commands with
 `allowed_commands`.

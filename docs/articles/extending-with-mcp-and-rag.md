@@ -11,9 +11,9 @@ tools and apps.
 
 ## MCP tools
 
-[`mcp_tools()`](https://hadimaster65555.github.io/rdeepagent/reference/mcp_tools.md)
+[`mcp_tools()`](https://hadimaster65555.github.io/deepagentsr/reference/mcp_tools.md)
 accepts already materialized
-[`deep_tool()`](https://hadimaster65555.github.io/rdeepagent/reference/deep_tool.md)
+[`deep_tool()`](https://hadimaster65555.github.io/deepagentsr/reference/deep_tool.md)
 objects, which is useful when another part of your application has
 already connected to an MCP server or converted remote capabilities.
 
@@ -55,7 +55,7 @@ agent <- create_deep_agent(
 ## RAG tools
 
 Use
-[`rag_tool()`](https://hadimaster65555.github.io/rdeepagent/reference/rag_tool.md)
+[`rag_tool()`](https://hadimaster65555.github.io/deepagentsr/reference/rag_tool.md)
 to wrap any R search function with signature `query` and `k`. The search
 function can query a data frame, a database, a vector store, or an
 external service.
@@ -83,7 +83,7 @@ search_tool$fun("approval", 2)
 #> 2 approval Approval pauses side effects before they run.
 ```
 
-[`rag_tools()`](https://hadimaster65555.github.io/rdeepagent/reference/rag_tools.md)
+[`rag_tools()`](https://hadimaster65555.github.io/deepagentsr/reference/rag_tools.md)
 returns a list so it can be concatenated with other tool lists.
 
 ``` r
@@ -119,7 +119,7 @@ agent <- create_deep_agent(
 
 The package keeps Shiny out of core imports, but ships a small example
 app under `inst/examples/shinychat`. It uses
-[`as_shinychat_stream()`](https://hadimaster65555.github.io/rdeepagent/reference/as_shinychat_stream.md)
+[`as_shinychat_stream()`](https://hadimaster65555.github.io/deepagentsr/reference/as_shinychat_stream.md)
 as the stable adapter point between `DeepAgent` event streams and a
 Shiny chat UI.
 
@@ -143,7 +143,7 @@ shiny::runApp(system.file("examples", "shinychat", package = "deepagentsr"))
 
 The app uses OpenAI through [ellmer](https://ellmer.tidyverse.org) when
 `OPENAI_API_KEY` is set and falls back to
-[`fake_chat()`](https://hadimaster65555.github.io/rdeepagent/reference/fake_chat.md)
+[`fake_chat()`](https://hadimaster65555.github.io/deepagentsr/reference/fake_chat.md)
 otherwise.
 
 ## Live OpenAI smoke tests
@@ -160,6 +160,6 @@ devtools::test(filter = "live-openai")
 ```
 
 The smoke matrix exercises tool-calling through the same
-[`deep_tool()`](https://hadimaster65555.github.io/rdeepagent/reference/deep_tool.md)
+[`deep_tool()`](https://hadimaster65555.github.io/deepagentsr/reference/deep_tool.md)
 and `ellmer` adapter path used by regular agents, including GPT 4.1 and
 GPT 5 family models when the account has access.

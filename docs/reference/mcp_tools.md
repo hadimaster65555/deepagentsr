@@ -17,7 +17,7 @@ mcp_tools(config = NULL, tools = list(), ...)
 - tools:
 
   Optional list of already materialized
-  [`deep_tool()`](https://hadimaster65555.github.io/rdeepagent/reference/deep_tool.md)
+  [`deep_tool()`](https://hadimaster65555.github.io/deepagentsr/reference/deep_tool.md)
   objects.
 
 - ...:

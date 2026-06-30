@@ -52,7 +52,7 @@ subagent(
   Optional function used to execute the subagent directly. It receives
   `task` and `context` arguments. This is primarily for interop wrappers
   such as
-  [`aisdk_subagent()`](https://hadimaster65555.github.io/rdeepagent/reference/aisdk_subagent.md).
+  [`aisdk_subagent()`](https://hadimaster65555.github.io/deepagentsr/reference/aisdk_subagent.md).
 
 ## Value
 

@@ -7,8 +7,8 @@ Description: Provides an R-native agent harness inspired by Deep Agents,
     with model adapters, tool metadata, virtual filesystems, planning tools,
     subagents, skills, memory, human approval, permissions, and event traces.
 License: MIT + file LICENSE
-URL: https://github.com/hadimaster65555/rdeepagent,
-    https://hadimaster65555.github.io/rdeepagent/
+URL: https://github.com/hadimaster65555/deepagentsr,
+    https://hadimaster65555.github.io/deepagentsr/
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.3

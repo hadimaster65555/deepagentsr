@@ -35,7 +35,7 @@ create_deep_agent(
 - tools:
 
   List of
-  [`deep_tool()`](https://hadimaster65555.github.io/rdeepagent/reference/deep_tool.md)
+  [`deep_tool()`](https://hadimaster65555.github.io/deepagentsr/reference/deep_tool.md)
   objects.
 
 - system_prompt:
@@ -50,7 +50,7 @@ create_deep_agent(
 - subagents:
 
   List of
-  [`subagent()`](https://hadimaster65555.github.io/rdeepagent/reference/subagent.md)
+  [`subagent()`](https://hadimaster65555.github.io/deepagentsr/reference/subagent.md)
   configurations.
 
 - skills:
@@ -68,13 +68,13 @@ create_deep_agent(
 - permissions:
 
   List of
-  [`fs_permission()`](https://hadimaster65555.github.io/rdeepagent/reference/fs_permission.md)
+  [`fs_permission()`](https://hadimaster65555.github.io/deepagentsr/reference/fs_permission.md)
   rules.
 
 - interrupt_on:
 
   Named list of
-  [`interrupt_config()`](https://hadimaster65555.github.io/rdeepagent/reference/interrupt_config.md)
+  [`interrupt_config()`](https://hadimaster65555.github.io/deepagentsr/reference/interrupt_config.md)
   objects.
 
 - context_schema:
@@ -86,7 +86,7 @@ create_deep_agent(
 - checkpointer:
 
   Optional durable checkpointer, such as
-  [`rds_checkpointer()`](https://hadimaster65555.github.io/rdeepagent/reference/rds_checkpointer.md).
+  [`rds_checkpointer()`](https://hadimaster65555.github.io/deepagentsr/reference/rds_checkpointer.md).
 
 - store:
 
