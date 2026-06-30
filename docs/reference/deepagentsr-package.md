@@ -10,7 +10,9 @@ local.
 
 Useful links:
 
-- <https://example.com/deepagentsr>
+- <https://github.com/hadimaster65555/rdeepagent>
+
+- <https://hadimaster65555.github.io/rdeepagent/>
 
 ## Author
 

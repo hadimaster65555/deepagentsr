@@ -13,7 +13,7 @@ rag_tools(search_fun = NULL, store = NULL, top_k = 3L, ...)
 - search_fun:
 
   Optional search function to wrap with
-  [`rag_tool()`](https://example.com/deepagentsr/reference/rag_tool.md).
+  [`rag_tool()`](https://hadimaster65555.github.io/rdeepagent/reference/rag_tool.md).
 
 - store:
 
@@ -26,7 +26,7 @@ rag_tools(search_fun = NULL, store = NULL, top_k = 3L, ...)
 - ...:
 
   Additional arguments passed to
-  [`rag_tool()`](https://example.com/deepagentsr/reference/rag_tool.md).
+  [`rag_tool()`](https://hadimaster65555.github.io/rdeepagent/reference/rag_tool.md).
 
 ## Value
 

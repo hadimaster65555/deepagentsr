@@ -13,7 +13,7 @@ read_events_jsonl(path)
 - path:
 
   JSONL path produced by
-  [`export_events_jsonl()`](https://example.com/deepagentsr/reference/export_events_jsonl.md).
+  [`export_events_jsonl()`](https://hadimaster65555.github.io/rdeepagent/reference/export_events_jsonl.md).
 
 ## Value
 

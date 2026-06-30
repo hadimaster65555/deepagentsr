@@ -6,13 +6,16 @@
 
 ## Citation
 
+Source:
+[`DESCRIPTION`](https://github.com/hadimaster65555/rdeepagent/blob/HEAD/DESCRIPTION)
+
 Master H (2026). *deepagentsr: Deep-Agents-Style Agent Harness for R*. R
-package version 0.0.1, <https://example.com/deepagentsr>.
+package version 0.0.1, <https://github.com/hadimaster65555/rdeepagent>.
 
     @Manual{,
       title = {deepagentsr: Deep-Agents-Style Agent Harness for R},
       author = {Hadi Master},
       year = {2026},
       note = {R package version 0.0.1},
-      url = {https://example.com/deepagentsr},
+      url = {https://github.com/hadimaster65555/rdeepagent},
     }

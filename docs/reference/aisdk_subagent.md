@@ -39,5 +39,6 @@ aisdk_subagent(
 
 ## Value
 
-A [`subagent()`](https://example.com/deepagentsr/reference/subagent.md)
+A
+[`subagent()`](https://hadimaster65555.github.io/rdeepagent/reference/subagent.md)
 configuration.

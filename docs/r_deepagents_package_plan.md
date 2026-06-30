@@ -1,14 +1,14 @@
 # Plan to Build an R Package Similar to Deep Agents
 
 Date: 2026-06-30 Working package name:
-[deepagentsr](https://example.com/deepagentsr)
+[deepagentsr](https://github.com/hadimaster65555/rdeepagent)
 
 ## 1. Executive summary
 
-Build [deepagentsr](https://example.com/deepagentsr), an R-native,
-batteries-included agent harness inspired by LangChain’s Deep Agents.
-The package should expose a simple entry point,
-[`create_deep_agent()`](https://example.com/deepagentsr/reference/create_deep_agent.md),
+Build [deepagentsr](https://github.com/hadimaster65555/rdeepagent), an
+R-native, batteries-included agent harness inspired by LangChain’s Deep
+Agents. The package should expose a simple entry point,
+[`create_deep_agent()`](https://hadimaster65555.github.io/rdeepagent/reference/create_deep_agent.md),
 that returns a stateful R6 object capable of planning, calling R tools,
 managing a virtual filesystem, spawning subagents, loading skills and
 memory, pausing for human approval, and streaming execution events.
@@ -72,7 +72,7 @@ human-in-the-loop approval, skills, tools, and MCP support.
 The Deep Agents quickstart shows the core shape of the user experience:
 define a model, register tools such as web search, provide a system
 prompt, then call
-[`create_deep_agent()`](https://example.com/deepagentsr/reference/create_deep_agent.md)
+[`create_deep_agent()`](https://hadimaster65555.github.io/rdeepagent/reference/create_deep_agent.md)
 and `invoke()`. The built-in harness automatically plans with a
 `write_todos` tool, uses file tools to offload context, spawns
 subagents, and synthesizes the result.
@@ -182,9 +182,11 @@ Use it in one of three ways:
     stateless agents and stateful sessions.
 2.  Optional interop: allow an
     [aisdk](https://github.com/YuLab-SMU/aisdk) Agent to be wrapped as a
-    [deepagentsr](https://example.com/deepagentsr) subagent or tool.
+    [deepagentsr](https://github.com/hadimaster65555/rdeepagent)
+    subagent or tool.
 3.  Alternative backend: if speed matters more than owning the agent
-    runtime, build [deepagentsr](https://example.com/deepagentsr) as a
+    runtime, build
+    [deepagentsr](https://github.com/hadimaster65555/rdeepagent) as a
     narrower API layer over [aisdk](https://github.com/YuLab-SMU/aisdk).
 
 Recommendation: begin with reference plus optional interop. Avoid a hard
@@ -213,7 +215,7 @@ agent <- create_deep_agent(
 ```
 
 Internally, provide
-[`mcp_tools()`](https://example.com/deepagentsr/reference/mcp_tools.md)
+[`mcp_tools()`](https://hadimaster65555.github.io/rdeepagent/reference/mcp_tools.md)
 helpers that return [ellmer](https://ellmer.tidyverse.org)-compatible
 tool definitions when [mcptools](https://github.com/posit-dev/mcptools)
 is installed.
@@ -247,9 +249,9 @@ Shiny chat UI.
 
 | Deep Agents capability | R package design | MVP? | R packages to use |
 |----|----|----|----|
-| [`create_deep_agent()`](https://example.com/deepagentsr/reference/create_deep_agent.md) | [`create_deep_agent()`](https://example.com/deepagentsr/reference/create_deep_agent.md) returning an R6 `DeepAgent` | Yes | R6, ellmer |
+| [`create_deep_agent()`](https://hadimaster65555.github.io/rdeepagent/reference/create_deep_agent.md) | [`create_deep_agent()`](https://hadimaster65555.github.io/rdeepagent/reference/create_deep_agent.md) returning an R6 `DeepAgent` | Yes | R6, ellmer |
 | Model-agnostic chat | Accept [ellmer](https://ellmer.tidyverse.org) `Chat` or model spec | Yes | ellmer |
-| Custom tools | [`deep_tool()`](https://example.com/deepagentsr/reference/deep_tool.md) wrapper around [`ellmer::tool()`](https://ellmer.tidyverse.org/reference/tool.html) plus policy metadata | Yes | ellmer, jsonlite |
+| Custom tools | [`deep_tool()`](https://hadimaster65555.github.io/rdeepagent/reference/deep_tool.md) wrapper around [`ellmer::tool()`](https://ellmer.tidyverse.org/reference/tool.html) plus policy metadata | Yes | ellmer, jsonlite |
 | Built-in planning | `write_todos()` and `read_todos()` harness tools | Yes | internal |
 | Filesystem tools | `ls`, `read_file`, `write_file`, `edit_file`, `glob`, `grep` over backend | Yes | fs, stringr/grep |
 | Virtual filesystem backends | Memory, local filesystem, composite routes | Yes | fs, R6 |
@@ -265,7 +267,7 @@ Shiny chat UI.
 | Shell/sandbox execution | Local dev backend first; real sandbox integration later | No for safe MVP | callr/processx optional |
 | Streaming | Event stream for tokens, tool calls, subagents, state updates | Yes | ellmer, coro, promises |
 | Observability | JSONL trace, event objects, token/cost summaries | Yes | jsonlite, cli, optional otel |
-| RAG tools | [`rag_tool()`](https://example.com/deepagentsr/reference/rag_tool.md) for document search | Later | ragnar |
+| RAG tools | [`rag_tool()`](https://hadimaster65555.github.io/rdeepagent/reference/rag_tool.md) for document search | Later | ragnar |
 
 ## 6. Proposed package architecture
 
@@ -448,7 +450,7 @@ Backend$stat(path)
 
 Implement these backends first:
 
-1.  [`memory_backend()`](https://example.com/deepagentsr/reference/memory_backend.md):
+1.  [`memory_backend()`](https://hadimaster65555.github.io/rdeepagent/reference/memory_backend.md):
     stores files in an environment/list. This is the default safe
     backend.
 2.  `filesystem_backend(root_dir, virtual_mode = TRUE)`: maps virtual
@@ -989,9 +991,9 @@ Acceptance criteria:
 Deliverables:
 
 - Implement
-  [`as_chat_factory()`](https://example.com/deepagentsr/reference/as_chat_factory.md).
+  [`as_chat_factory()`](https://hadimaster65555.github.io/rdeepagent/reference/as_chat_factory.md).
 - Implement
-  [`deep_tool()`](https://example.com/deepagentsr/reference/deep_tool.md)
+  [`deep_tool()`](https://hadimaster65555.github.io/rdeepagent/reference/deep_tool.md)
   and `ToolRegistry`.
 - Implement registration of user tools into
   [ellmer](https://ellmer.tidyverse.org) chat objects.
@@ -1012,10 +1014,10 @@ Deliverables:
 
 - Implement `Backend` protocol.
 - Implement
-  [`memory_backend()`](https://example.com/deepagentsr/reference/memory_backend.md).
+  [`memory_backend()`](https://hadimaster65555.github.io/rdeepagent/reference/memory_backend.md).
 - Implement `filesystem_backend(root_dir, virtual_mode = TRUE)`.
 - Implement
-  [`composite_backend()`](https://example.com/deepagentsr/reference/composite_backend.md).
+  [`composite_backend()`](https://hadimaster65555.github.io/rdeepagent/reference/composite_backend.md).
 - Implement built-in file tools.
 - Add path traversal, symlink escape, and permission tests.
 
@@ -1069,7 +1071,7 @@ Acceptance criteria:
 Deliverables:
 
 - Implement
-  [`subagent()`](https://example.com/deepagentsr/reference/subagent.md)
+  [`subagent()`](https://hadimaster65555.github.io/rdeepagent/reference/subagent.md)
   config.
 - Implement default `general-purpose` subagent.
 - Implement `SubagentManager` and built-in `task()` tool.
@@ -1105,7 +1107,7 @@ Acceptance criteria:
 Deliverables:
 
 - Implement
-  [`interrupt_config()`](https://example.com/deepagentsr/reference/interrupt_config.md)
+  [`interrupt_config()`](https://hadimaster65555.github.io/rdeepagent/reference/interrupt_config.md)
   and decision objects.
 - Implement `agent$resume()`.
 - Implement tool-level interrupts.
@@ -1243,7 +1245,7 @@ Default security posture:
 
 Documentation must clearly state:
 
-- [`filesystem_backend()`](https://example.com/deepagentsr/reference/filesystem_backend.md)
+- [`filesystem_backend()`](https://hadimaster65555.github.io/rdeepagent/reference/filesystem_backend.md)
   is a capability grant.
 - `local_dev_shell_backend()` is not a security sandbox.
 - Path permissions do not secure arbitrary custom tools unless those
@@ -1258,7 +1260,7 @@ Documentation must clearly state:
 
 Include:
 
-- What [deepagentsr](https://example.com/deepagentsr) is.
+- What [deepagentsr](https://github.com/hadimaster65555/rdeepagent) is.
 - Why it exists: DeepAgents-style workflow for R.
 - Minimal quickstart.
 - Safety note.
@@ -1311,19 +1313,19 @@ Version milestones:
 
 Rationale: [ellmer](https://ellmer.tidyverse.org) is provider-agnostic
 and handles the model/tool plumbing. This lets
-[deepagentsr](https://example.com/deepagentsr) focus on the harness:
-planning, VFS, subagents, memory, skills, permissions, and context
-management.
+[deepagentsr](https://github.com/hadimaster65555/rdeepagent) focus on
+the harness: planning, VFS, subagents, memory, skills, permissions, and
+context management.
 
 ### Decision 2: Treat `{aisdk}` as a reference and optional interop layer
 
 Rationale: [aisdk](https://github.com/YuLab-SMU/aisdk) has relevant
 agent features, but a hard dependency could make
-[deepagentsr](https://example.com/deepagentsr) a thin wrapper. Optional
-interop lets advanced users compose
+[deepagentsr](https://github.com/hadimaster65555/rdeepagent) a thin
+wrapper. Optional interop lets advanced users compose
 [aisdk](https://github.com/YuLab-SMU/aisdk) Agents into
-[deepagentsr](https://example.com/deepagentsr) without forcing that
-architecture on the core.
+[deepagentsr](https://github.com/hadimaster65555/rdeepagent) without
+forcing that architecture on the core.
 
 ### Decision 3: Implement a virtual filesystem before shell execution
 
@@ -1355,7 +1357,7 @@ prompt text.
 | Live API tests are flaky or expensive | CRAN and CI cannot rely on external providers | Fake model unit tests, optional integration tests |
 | Dependency creep | Agent packages can become heavy quickly | Core imports only for required runtime; integrations in Suggests |
 | [ellmer](https://ellmer.tidyverse.org) API changes | The ecosystem is moving quickly | Pin minimum versions, adapter layer, compatibility tests |
-| [aisdk](https://github.com/YuLab-SMU/aisdk) overlap creates confusion | Users may ask why both exist | Clear positioning: [deepagentsr](https://example.com/deepagentsr) is a DeepAgents-style harness; [aisdk](https://github.com/YuLab-SMU/aisdk) is optional/reference |
+| [aisdk](https://github.com/YuLab-SMU/aisdk) overlap creates confusion | Users may ask why both exist | Clear positioning: [deepagentsr](https://github.com/hadimaster65555/rdeepagent) is a DeepAgents-style harness; [aisdk](https://github.com/YuLab-SMU/aisdk) is optional/reference |
 
 ## 16. First build checklist
 
@@ -1363,10 +1365,10 @@ prompt text.
 2.  Add `DESCRIPTION` imports and suggests.
 3.  Implement fake chat/model for deterministic tests.
 4.  Implement
-    [`deep_tool()`](https://example.com/deepagentsr/reference/deep_tool.md)
+    [`deep_tool()`](https://hadimaster65555.github.io/rdeepagent/reference/deep_tool.md)
     and `ToolRegistry`.
 5.  Implement
-    [`memory_backend()`](https://example.com/deepagentsr/reference/memory_backend.md)
+    [`memory_backend()`](https://hadimaster65555.github.io/rdeepagent/reference/memory_backend.md)
     and file tools.
 6.  Implement `DeepAgent$invoke()` with planning tool.
 7.  Add context offload for large tool results.

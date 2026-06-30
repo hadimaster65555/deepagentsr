@@ -45,6 +45,7 @@
 <li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json">
 </form></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/hadimaster65555/rdeepagent/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul>
 </div>
 
@@ -61,14 +62,14 @@
       <h1>Tools and Files</h1>
             
       
-
+      <small class="dont-index">Source: <a href="https://github.com/hadimaster65555/rdeepagent/blob/HEAD/vignettes/tools-and-files.Rmd" class="external-link"><code>vignettes/tools-and-files.Rmd</code></a></small>
       <div class="d-none name"><code>tools-and-files.Rmd</code></div>
     </div>
 
     
     
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://example.com/deepagentsr">deepagentsr</a></span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/hadimaster65555/rdeepagent" class="external-link">deepagentsr</a></span><span class="op">)</span></span></code></pre></div>
 <p>Tools and files are the main working surface for a deep agent. User
 tools give the model controlled access to R functions. Built-in file
 tools give it a virtual workspace for notes, drafts, large results, and
@@ -216,8 +217,8 @@ receives a short reference and can inspect the full value later with
 <span><span class="co">#&gt; [1] "The result was offloaded."</span></span>
 <span><span class="va">offload_backend</span><span class="op">$</span><span class="fu">list</span><span class="op">(</span><span class="st">"/internal/offloads"</span>, recursive <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="co">#&gt;                                                                     path type</span></span>
-<span><span class="co">#&gt; 1 /internal/offloads/2026-06-30/offload-20260630230856.439-acgf0lko.json file</span></span>
-<span><span class="co">#&gt; 2  /internal/offloads/2026-06-30/offload-20260630230856.439-acgf0lko.txt file</span></span>
+<span><span class="co">#&gt; 1 /internal/offloads/2026-06-30/offload-20260630232326.147-acgf0lko.json file</span></span>
+<span><span class="co">#&gt; 2  /internal/offloads/2026-06-30/offload-20260630232326.147-acgf0lko.txt file</span></span>
 <span><span class="co">#&gt;   size</span></span>
 <span><span class="co">#&gt; 1  255</span></span>
 <span><span class="co">#&gt; 2  779</span></span></code></pre></div>
@@ -248,7 +249,7 @@ into a summary while the full transcript is preserved in
 <span><span class="co">#&gt; [1] "summary"   "tool"      "assistant"</span></span>
 <span><span class="va">summary_backend</span><span class="op">$</span><span class="fu">list</span><span class="op">(</span><span class="st">"/internal/transcripts"</span>, recursive <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="co">#&gt;                                                                                              path</span></span>
-<span><span class="co">#&gt; 1 /internal/transcripts/thread-20260630230856.486-cphlbgrz/summary-20260630230856.488-lwtdsuvu.md</span></span>
+<span><span class="co">#&gt; 1 /internal/transcripts/thread-20260630232326.192-cphlbgrz/summary-20260630232326.194-lwtdsuvu.md</span></span>
 <span><span class="co">#&gt;   type size</span></span>
 <span><span class="co">#&gt; 1 file  581</span></span></code></pre></div>
 </div>
@@ -268,7 +269,7 @@ runs and interrupts.</p>
 <span></span>
 <span><span class="va">checkpoint_run</span> <span class="op">&lt;-</span> <span class="va">checkpoint_agent</span><span class="op">$</span><span class="fu">invoke</span><span class="op">(</span><span class="st">"hello"</span><span class="op">)</span></span>
 <span><span class="va">checkpointer</span><span class="op">$</span><span class="fu">list_threads</span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "thread-20260630230856.538-q6rw5wkz"</span></span>
+<span><span class="co">#&gt; [1] "thread-20260630232326.244-q6rw5wkz"</span></span>
 <span></span>
 <span><span class="va">restored</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/create_deep_agent.html">create_deep_agent</a></span><span class="op">(</span></span>
 <span>  model <span class="op">=</span> <span class="fu"><a href="../reference/fake_chat.html">fake_chat</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="fu"><a href="../reference/assistant_message.html">assistant_message</a></span><span class="op">(</span><span class="st">"unused"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>,</span>

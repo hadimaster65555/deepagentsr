@@ -3,10 +3,10 @@
 `deepagentsr` provides a small Deep-Agents-style harness for R. A
 `DeepAgent` wraps a model, R tools, a virtual filesystem, subagents,
 memory, human approval, and execution events behind one entry point:
-[`create_deep_agent()`](https://example.com/deepagentsr/reference/create_deep_agent.md).
+[`create_deep_agent()`](https://hadimaster65555.github.io/rdeepagent/reference/create_deep_agent.md).
 
 This vignette uses
-[`fake_chat()`](https://example.com/deepagentsr/reference/fake_chat.md)
+[`fake_chat()`](https://hadimaster65555.github.io/rdeepagent/reference/fake_chat.md)
 so it can run without a network connection. Use the same agent
 configuration with an `ellmer` chat object when you want live model
 calls.
@@ -14,7 +14,7 @@ calls.
 ## A deterministic first agent
 
 Tools are ordinary R functions wrapped with
-[`deep_tool()`](https://example.com/deepagentsr/reference/deep_tool.md).
+[`deep_tool()`](https://hadimaster65555.github.io/rdeepagent/reference/deep_tool.md).
 If you do not provide an argument schema, `deepagentsr` infers one from
 the function formals and converts it to the provider-specific `ellmer`
 schema when needed.

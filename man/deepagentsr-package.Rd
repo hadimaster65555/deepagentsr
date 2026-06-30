@@ -14,7 +14,8 @@ optional LLM substrate while keeping deterministic fake-model tests local.
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://example.com/deepagentsr}
+  \item \url{https://github.com/hadimaster65555/rdeepagent}
+  \item \url{https://hadimaster65555.github.io/rdeepagent/}
 }
 
 }

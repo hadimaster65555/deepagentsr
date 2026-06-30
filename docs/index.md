@@ -2,7 +2,7 @@
 
 `deepagentsr` is an R-native agent harness inspired by Deep Agents. It
 provides a high-level
-[`create_deep_agent()`](https://example.com/deepagentsr/reference/create_deep_agent.md)
+[`create_deep_agent()`](https://hadimaster65555.github.io/rdeepagent/reference/create_deep_agent.md)
 API with R tools, a virtual filesystem, planning tools, subagents,
 skills, memory, human approval, permissions, context offloading, and
 event traces.

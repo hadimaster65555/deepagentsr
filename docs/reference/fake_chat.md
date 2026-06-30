@@ -13,9 +13,9 @@ fake_chat(script = list())
 - script:
 
   A list of
-  [`assistant_message()`](https://example.com/deepagentsr/reference/assistant_message.md)
+  [`assistant_message()`](https://hadimaster65555.github.io/rdeepagent/reference/assistant_message.md)
   and
-  [`assistant_tool_call()`](https://example.com/deepagentsr/reference/assistant_tool_call.md)
+  [`assistant_tool_call()`](https://hadimaster65555.github.io/rdeepagent/reference/assistant_tool_call.md)
   records.
 
 ## Value

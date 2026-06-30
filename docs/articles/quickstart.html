@@ -45,6 +45,7 @@
 <li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json">
 </form></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/hadimaster65555/rdeepagent/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul>
 </div>
 
@@ -61,7 +62,7 @@
       <h1>Quickstart</h1>
             
       
-
+      <small class="dont-index">Source: <a href="https://github.com/hadimaster65555/rdeepagent/blob/HEAD/vignettes/quickstart.Rmd" class="external-link"><code>vignettes/quickstart.Rmd</code></a></small>
       <div class="d-none name"><code>quickstart.Rmd</code></div>
     </div>
 
@@ -82,7 +83,7 @@ If you do not provide an argument schema, <code>deepagentsr</code>
 infers one from the function formals and converts it to the
 provider-specific <code>ellmer</code> schema when needed.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://example.com/deepagentsr">deepagentsr</a></span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/hadimaster65555/rdeepagent" class="external-link">deepagentsr</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">calculator</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/deep_tool.html">deep_tool</a></span><span class="op">(</span></span>
 <span>  <span class="kw">function</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span> <span class="va">x</span> <span class="op">+</span> <span class="va">y</span>,</span>
@@ -134,7 +135,7 @@ registers tools with <code>ellmer</code> and lets <code>ellmer</code>
 handle OpenAI, Anthropic, Ollama, and other providers.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ellmer.tidyverse.org" class="external-link">ellmer</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://example.com/deepagentsr">deepagentsr</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/hadimaster65555/rdeepagent" class="external-link">deepagentsr</a></span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Optional for local development when OPENAI_API_KEY is stored in .env.</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/readRenviron.html" class="external-link">readRenviron</a></span><span class="op">(</span><span class="st">".env"</span><span class="op">)</span></span>
