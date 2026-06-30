@@ -174,8 +174,8 @@ offload_run$text
 #> [1] "The result was offloaded."
 offload_backend$list("/internal/offloads", recursive = TRUE)
 #>                                                                     path type
-#> 1 /internal/offloads/2026-06-30/offload-20260630225605.325-acgf0lko.json file
-#> 2  /internal/offloads/2026-06-30/offload-20260630225605.325-acgf0lko.txt file
+#> 1 /internal/offloads/2026-06-30/offload-20260630230856.439-acgf0lko.json file
+#> 2  /internal/offloads/2026-06-30/offload-20260630230856.439-acgf0lko.txt file
 #>   size
 #> 1  255
 #> 2  779
@@ -209,7 +209,7 @@ vapply(summary_run$state$turns, function(turn) turn$role, character(1))
 #> [1] "summary"   "tool"      "assistant"
 summary_backend$list("/internal/transcripts", recursive = TRUE)
 #>                                                                                              path
-#> 1 /internal/transcripts/thread-20260630225605.373-cphlbgrz/summary-20260630225605.375-lwtdsuvu.md
+#> 1 /internal/transcripts/thread-20260630230856.486-cphlbgrz/summary-20260630230856.488-lwtdsuvu.md
 #>   type size
 #> 1 file  581
 ```
@@ -231,7 +231,7 @@ checkpoint_agent <- create_deep_agent(
 
 checkpoint_run <- checkpoint_agent$invoke("hello")
 checkpointer$list_threads()
-#> [1] "thread-20260630225605.428-q6rw5wkz"
+#> [1] "thread-20260630230856.538-q6rw5wkz"
 
 restored <- create_deep_agent(
   model = fake_chat(list(assistant_message("unused"))),

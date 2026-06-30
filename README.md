@@ -1,18 +1,16 @@
+
 # deepagentsr
 
 `deepagentsr` is an R-native agent harness inspired by Deep Agents. It
-provides a high-level
-[`create_deep_agent()`](https://example.com/deepagentsr/reference/create_deep_agent.md)
-API with R tools, a virtual filesystem, planning tools, subagents,
-skills, memory, human approval, permissions, context offloading, and
-event traces.
+provides a high-level `create_deep_agent()` API with R tools, a virtual
+filesystem, planning tools, subagents, skills, memory, human approval,
+permissions, context offloading, and event traces.
 
 The package is designed to use `ellmer` chat objects for real LLM calls,
 while the included fake chat model makes tests and examples
 deterministic.
 
 ``` r
-
 library(deepagentsr)
 
 search_tool <- deep_tool(
@@ -36,9 +34,7 @@ result <- agent$invoke("Research ellmer.")
 result$text
 ```
 
-``` R
-## [1] "ellmer is useful because it provides chat and tool-calling abstractions for R."
-```
+    ## [1] "ellmer is useful because it provides chat and tool-calling abstractions for R."
 
 ## Safety posture
 

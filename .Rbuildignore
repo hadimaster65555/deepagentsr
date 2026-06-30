@@ -4,7 +4,6 @@
 ^\.env$
 ^deepagentsr\.Rproj$
 ^rdeepagent\.Rproj$
-^README\.Rmd$
 ^_pkgdown\.yml$
 ^scripts$
 ^docs$

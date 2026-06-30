@@ -216,8 +216,8 @@ receives a short reference and can inspect the full value later with
 <span><span class="co">#&gt; [1] "The result was offloaded."</span></span>
 <span><span class="va">offload_backend</span><span class="op">$</span><span class="fu">list</span><span class="op">(</span><span class="st">"/internal/offloads"</span>, recursive <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="co">#&gt;                                                                     path type</span></span>
-<span><span class="co">#&gt; 1 /internal/offloads/2026-06-30/offload-20260630225605.325-acgf0lko.json file</span></span>
-<span><span class="co">#&gt; 2  /internal/offloads/2026-06-30/offload-20260630225605.325-acgf0lko.txt file</span></span>
+<span><span class="co">#&gt; 1 /internal/offloads/2026-06-30/offload-20260630230856.439-acgf0lko.json file</span></span>
+<span><span class="co">#&gt; 2  /internal/offloads/2026-06-30/offload-20260630230856.439-acgf0lko.txt file</span></span>
 <span><span class="co">#&gt;   size</span></span>
 <span><span class="co">#&gt; 1  255</span></span>
 <span><span class="co">#&gt; 2  779</span></span></code></pre></div>
@@ -248,7 +248,7 @@ into a summary while the full transcript is preserved in
 <span><span class="co">#&gt; [1] "summary"   "tool"      "assistant"</span></span>
 <span><span class="va">summary_backend</span><span class="op">$</span><span class="fu">list</span><span class="op">(</span><span class="st">"/internal/transcripts"</span>, recursive <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="co">#&gt;                                                                                              path</span></span>
-<span><span class="co">#&gt; 1 /internal/transcripts/thread-20260630225605.373-cphlbgrz/summary-20260630225605.375-lwtdsuvu.md</span></span>
+<span><span class="co">#&gt; 1 /internal/transcripts/thread-20260630230856.486-cphlbgrz/summary-20260630230856.488-lwtdsuvu.md</span></span>
 <span><span class="co">#&gt;   type size</span></span>
 <span><span class="co">#&gt; 1 file  581</span></span></code></pre></div>
 </div>
@@ -268,7 +268,7 @@ runs and interrupts.</p>
 <span></span>
 <span><span class="va">checkpoint_run</span> <span class="op">&lt;-</span> <span class="va">checkpoint_agent</span><span class="op">$</span><span class="fu">invoke</span><span class="op">(</span><span class="st">"hello"</span><span class="op">)</span></span>
 <span><span class="va">checkpointer</span><span class="op">$</span><span class="fu">list_threads</span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "thread-20260630225605.428-q6rw5wkz"</span></span>
+<span><span class="co">#&gt; [1] "thread-20260630230856.538-q6rw5wkz"</span></span>
 <span></span>
 <span><span class="va">restored</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/create_deep_agent.html">create_deep_agent</a></span><span class="op">(</span></span>
 <span>  model <span class="op">=</span> <span class="fu"><a href="../reference/fake_chat.html">fake_chat</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="fu"><a href="../reference/assistant_message.html">assistant_message</a></span><span class="op">(</span><span class="st">"unused"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>,</span>
