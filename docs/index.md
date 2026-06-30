@@ -1,5 +1,7 @@
 # deepagentsr
 
+![deepagentsr hex logo](reference/figures/logo.svg)
+
 `deepagentsr` is an R-native agent harness inspired by Deep Agents. It
 provides a high-level
 [`create_deep_agent()`](https://hadimaster65555.github.io/deepagentsr/reference/create_deep_agent.md)

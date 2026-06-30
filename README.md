@@ -1,6 +1,8 @@
 
 # deepagentsr
 
+<img src="man/figures/logo.svg" align="right" width="180" alt="deepagentsr hex logo" />
+
 `deepagentsr` is an R-native agent harness inspired by Deep Agents. It
 provides a high-level `create_deep_agent()` API with R tools, a virtual
 filesystem, planning tools, subagents, skills, memory, human approval,
